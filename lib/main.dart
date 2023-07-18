@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pokemon_example_api/data/model/pokemon_model.dart';
 import 'package:pokemon_example_api/data/network/api.dart';
-import 'package:pokemon_example_api/pokemon_detail_page.dart';
-import 'package:pokemon_example_api/search_pokemon.dart';
+import 'package:pokemon_example_api/ui/detail_pok/pokemon_detail_page.dart';
+import 'package:pokemon_example_api/ui/detail_pok/search_pok/search_pokemon.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 void main() {
@@ -86,7 +86,7 @@ class _MyAppState extends State<MyApp> {
                         Pokemon data = snapshot.data.pokemon[index];
                         
                         return Container(
-                          padding: EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(16),
                           child: Stack(
                             children: [
                               Column(
@@ -128,7 +128,7 @@ class _MyAppState extends State<MyApp> {
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.all(4),
+                                      padding: const EdgeInsets.all(4),
                                       height: 30,
                                       width: 125,
                                       decoration: BoxDecoration(
@@ -141,8 +141,8 @@ class _MyAppState extends State<MyApp> {
                                         children: [
                                           Text(
                                             "#${data.num}",
-                                            style: TextStyle(
-                                              color: const Color(0xffF993FB),
+                                            style: const TextStyle(
+                                              color: Color(0xffF993FB),
                                             ),
                                           ),
                                           Flexible(

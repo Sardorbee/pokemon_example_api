@@ -60,7 +60,7 @@ class Pokemon {
         num: json["num"],
         name: json["name"],
         img: json["img"] ?? '',
-        type: List.from(json["type"].map((x) => [x]!)),
+        type: List<String>.from(json["type"].map((x) => x.toString())),
         height: json["height"],
         weight: json["weight"],
         candy: json["candy"],
@@ -72,7 +72,7 @@ class Pokemon {
         multipliers: json["multipliers"] == null
             ? []
             : List<double>.from(json["multipliers"]!.map((x) => x?.toDouble())),
-        weaknesses: List.from(json["weaknesses"].map((x) => [x]!)),
+        weaknesses: List<String>.from(json["weaknesses"].map((x) => x.toString())),
         nextEvolution: json["next_evolution"] == null
             ? []
             : List<Evolution>.from(
