@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pokemon_example_api/ui/detail_pok/pokemon_detail_page.dart';
 
-import '../../../data/model/pokemon_model.dart';
+import '../../data/model/pokemon_model.dart';
 
 class PokemonSearchDelegate extends SearchDelegate<Pokemon> {
   final List<Pokemon> pokemonList; // Pass the list of Pokémon from the main page
