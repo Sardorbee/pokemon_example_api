@@ -3,14 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:pokemon_example_api/data/model/pokemon_model.dart';
 import 'package:pokemon_example_api/data/network/api.dart';
 import 'package:pokemon_example_api/pokemon_detail_page.dart';
+import 'package:pokemon_example_api/search_pokemon.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  //  List<Pokemon>? pokemonListFuture;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +47,13 @@ class MyApp extends StatelessWidget {
                       SizedBox(
                         width: 400,
                         child: TextField(
+                          onChanged: (v) {
+                            // showSearch(
+                            //   context: context,
+                            //   delegate: PokemonSearchDelegate(
+                            //       pokemonListFuture!), // Pass the list of Pokémon
+                            // );
+                          },
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(
@@ -69,6 +84,7 @@ class MyApp extends StatelessWidget {
                         );
                       } else if (snapshot.hasData) {
                         Pokemon data = snapshot.data.pokemon[index];
+                        
                         return Container(
                           padding: EdgeInsets.all(16),
                           child: Stack(
@@ -160,5 +176,17 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class MyCustomWidget extends StatelessWidget {
+  final List<Pokemon> pokemonList;
+
+  MyCustomWidget({required this.pokemonList});
+
+  @override
+  Widget build(BuildContext context) {
+    // Use the pokemonList data here as needed
+    return Container();
   }
 }
