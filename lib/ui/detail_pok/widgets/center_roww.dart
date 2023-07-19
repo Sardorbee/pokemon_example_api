@@ -4,7 +4,7 @@ import 'package:pokemon_example_api/ui/utils/colorlist.dart';
 
 class CenterRow extends StatelessWidget {
   Pokemon pokemon;
-   CenterRow({super.key , required this.pokemon});
+  CenterRow({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +23,13 @@ class CenterRow extends StatelessWidget {
                 typeColor = Colors.grey;
               }
               return Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
+                  color: typeColor,
+                ),
                 margin: const EdgeInsets.all(5),
-                color: typeColor,
                 width: 185,
                 child: Container(
                   height: 20,
