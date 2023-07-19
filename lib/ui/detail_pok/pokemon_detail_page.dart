@@ -3,6 +3,7 @@ import 'package:pokemon_example_api/data/model/pokemon_model.dart';
 import 'package:pokemon_example_api/ui/detail_pok/widgets/center_roww.dart';
 import 'package:pokemon_example_api/ui/detail_pok/widgets/expanded_bottom.dart';
 import 'package:pokemon_example_api/ui/detail_pok/widgets/pok_img.dart';
+import 'package:pokemon_example_api/ui/search_pok/search_pokemon.dart';
 
 // ignore: must_be_immutable
 class Pokemondetail extends StatefulWidget {
@@ -40,12 +41,12 @@ class _PokemondetailState extends State<Pokemondetail> {
               height: 40,
               width: 400,
               child: TextField(
-                onChanged: (v) {
-                  // showSearch(
-                  //   context: context,
-                  //   delegate: PokemonSearchDelegate(
-                  //       pokemonListFuture!), // Pass the list of Pokémon
-                  // );
+                onTap: () {
+                  showSearch(
+                            context: context,
+                            delegate:
+                                PokemonSearchDelegate(), // Pass the list of Pokémon
+                          );
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
